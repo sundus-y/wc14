@@ -1,0 +1,8 @@
+<h2>Score Board</h2>
+<div class="score_board">
+  <% @total_points.sort_by {|k,v| v}.reverse.each  do |point| %>
+    <div class="score_board_item <%= 'current' if current_user && current_user.email == point.first%>">
+      <%= point.first.split('@').first %>: <%= point.last %>
+    </div>
+  <% end %>
+</div>

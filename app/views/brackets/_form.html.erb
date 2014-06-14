@@ -1,0 +1,38 @@
+<%= form_for(@bracket) do |f| %>
+  <% if @bracket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bracket.errors.count, "error") %> prohibited this bracket from being saved:</h2>
+
+      <ul>
+      <% @bracket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, User.all, :id, :email %>
+  </div>
+  <div class="field">
+    <%= f.label :game_id %><br>
+    <%= f.collection_select :game_id, Game.bracket_game_picker, :id, :to_s %>
+  </div>
+  <div class="field">
+    <%= f.label :team_a %><br>
+    <%= f.collection_select :team_a, Game.bracket_team_picker, :team_a, :team_a %>
+  </div>
+  <div class="field">
+    <%= f.label :team_b %><br>
+    <%= f.collection_select :team_b, Game.bracket_team_picker, :team_a, :team_a %>
+  </div>
+  <div class="field">
+    <%= f.label :round %><br>
+    <%= f.select :round, [1,2,4,6] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

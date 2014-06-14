@@ -1,0 +1,33 @@
+<h2>
+  Group Stage
+</h2>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#tab_1" data-toggle="tab">1</a></li>
+  <li><a href="#tab_2" data-toggle="tab">2</a></li>
+  <li><a href="#tab_3" data-toggle="tab">3</a></li>
+  <li><a href="#tab_4" data-toggle="tab">4</a></li>
+  <li><a href="#tab_5" data-toggle="tab">5</a></li>
+  <li><a href="#tab_6" data-toggle="tab">6</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="tab_1">
+    <%= render 'games', :games => @games[:round_0][0..7] %>
+  </div>
+  <div class="tab-pane fade" id="tab_2">
+    <%= render 'games', :games => @games[:round_0][8..15] %>
+  </div>
+  <div class="tab-pane fade" id="tab_3">
+    <%= render 'games', :games => @games[:round_0][16..23]%>
+  </div>
+  <div class="tab-pane fade" id="tab_4">
+    <%= render 'games', :games => @games[:round_0][24..31]%>
+  </div>
+  <div class="tab-pane fade" id="tab_5">
+    <%= render 'games', :games => @games[:round_0][32..39]%>
+  </div>
+  <div class="tab-pane fade" id="tab_6">
+    <%= render 'games', :games => @games[:round_0][40..47]%>
+  </div>
+</div>

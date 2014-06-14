@@ -1,0 +1,31 @@
+<br>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#group_stage" data-toggle="tab">Group Stage</a></li>
+  <li><a href="#round_of_16" data-toggle="tab">Round of 16</a></li>
+  <li><a href="#quarter_final" data-toggle="tab">Quarter Final</a></li>
+  <li><a href="#semi_final" data-toggle="tab">Semi Final</a></li>
+  <li><a href="#final" data-toggle="tab">Final</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active " id="group_stage">
+    <%= render 'group_stage' %>
+  </div>
+  <div class="tab-pane fade" id="round_of_16">
+    <%= render 'round_of_16' %>
+  </div>
+  <div class="tab-pane fade" id="quarter_final">
+    <%= render 'quarter_final' %>
+  </div>
+  <div class="tab-pane fade" id="semi_final">
+    <%= render 'semi_final' %>
+  </div>
+  <div class="tab-pane fade" id="final">
+    <%= render 'final' %>
+  </div>
+</div>
+
+<%= link_to 'New Game', new_game_path if current_user && current_user.email=='sundus-yousuf@uiowa.edu'%>
+
+<br>

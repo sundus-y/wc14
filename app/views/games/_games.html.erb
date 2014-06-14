@@ -1,0 +1,11 @@
+<% games.each do |game| %>
+  <div class="game_box well_games row <%= game.past? ? "past_game" : "future_game" %>">
+    <div class="well_games game_date span-2"><%= game.game_date.strftime('%a %m %d') %></div>
+    <div class="well_games game_time span-2"><%= game.game_time.strftime('%I:%M %p') %></div>
+    <div class="well_games team_left span-3 <%= 'winner_team' if game.winner == 'a' %>"><%= game.team_a %></div>
+    <div class="well_games goal_left span-1"><%= game.goal_a%></div>
+    <div class="well_games goal_right span-1"><%= game.goal_b%></div>
+    <div class="well_games team_right span-3 <%= 'winner_team' if game.winner == 'b' %>"><%= game.team_b %></div>
+    <div class="well_games"><%= link_to 'Edit', edit_game_path(game) if current_user && current_user.email=='sundus-yousuf@uiowa.edu'%></div>
+  </div>
+<% end %>

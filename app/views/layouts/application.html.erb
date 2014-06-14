@@ -6,9 +6,47 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body style="padding-top: 45px">
+  <% if flash[:notice] || flash[:alert] %>
+    <div class="alert <%= 'warning' if flash[:alert] %>" style="display: none">
+      <%= flash[:notice] || flash[:alert] %>
+    </div>
+  <% end %>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">World Cup 14 - Bracket</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "Games", games_path %></li>
+            <li><%= link_to "My Bracket", brackets_path %></li>
+            <li><%= link_to "Contact Us" %></li>
+            <% if current_user %>
+              <li><%= link_to current_user.email, edit_user_path(current_user.id) %></li>
+              <li><%= link_to "Logout", :logout, method: :post %></li>
+            <% else %>
+              <li><%= link_to "Register", new_user_path %></li>
+              <li><%= link_to "Login", :login %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="span9 vertical_line">
+        <%= yield %>
+      </div>
+      <div class="span3">
+        <%= render 'side_bar'%>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

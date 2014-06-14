@@ -1,0 +1,21 @@
+.bk{
+    background: url('/assets/bk.png')
+}
+
+.bracket_box{
+    background-color: #600;
+    color: wheat;
+    width: 90px;
+    margin: 8px;
+    padding: 10px 0px 15px 10px;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5); /*10px is horizontal offset, 5px is vertical offset, 15px is blur radius and rgba(0,0,0,.5) is shadow color*/
+}
+
+.my_badge{
+    position: relative;
+    top: 15px;
+    left: 95px;
+}

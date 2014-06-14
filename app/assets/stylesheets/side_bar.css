@@ -1,0 +1,23 @@
+.score_board{
+
+}
+
+.vertical_line{
+    margin-left: -15px;
+    padding-right: 40px;
+    border-right: thin solid #ff0000;
+}
+
+.score_board_item{
+    padding: 10px;
+    margin: 10px;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+.score_board_item.current{
+    background-color: #600;
+    color: wheat;
+}

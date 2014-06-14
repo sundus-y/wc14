@@ -1,0 +1,100 @@
+.team_left{
+    display: inline-block;
+    width: 145px;
+    text-align: right;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+.goal_left{
+    display: inline-block;
+    background-color: darkslategrey;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius:20px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+
+}
+
+.team_right{
+    display: inline-block;
+    width: 145px;
+    text-align: left;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+.goal_right{
+    display: inline-block;
+    background-color: darkslategrey;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius:25px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+.game_time{
+    display: inline-block;
+    width: 70px;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+.game_date{
+    width: 80px;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+.tab-pane{
+    padding-left: 20px;
+}
+
+.well_games{
+    padding: 3px;
+    margin: 12px;
+}
+
+.winner_team{
+    font-weight: bold;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(255,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(255,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(255,0,0,.5);
+}
+
+.past_game{
+    background: #4E0000 !important;
+}
+
+.future_game{
+    background: #600;
+    color: wheat;
+}
+
+.game_box{
+    background-color: #600;
+    color: wheat;
+    border-radius:5px;
+    -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
+    box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+
