@@ -74,13 +74,13 @@
 .winner_team{
     font-weight: bold;
     border-radius:5px;
-    -moz-box-shadow:10px 5px 15px rgba(255,0,0,.5);
-    -webkit-box-shadow:10px 5px 15px rgba(255,0,0,.5);
-    box-shadow: 5px 0px 15px rgba(255,0,0,.5);
+    -moz-box-shadow:10px 5px 15px rgba(255,0,0,.7);
+    -webkit-box-shadow:10px 5px 15px rgba(255,0,0,.7);
+    box-shadow: 5px 0px 15px rgba(255,0,0,.7);
 }
 
 .past_game{
-    background: #4E0000 !important;
+    background: #3A2020 !important;
 }
 
 .future_game{
@@ -95,6 +95,18 @@
     -moz-box-shadow:10px 5px 15px rgba(0,0,0,.5);
     -webkit-box-shadow:10px 5px 15px rgba(0,0,0,.5);
     box-shadow: 5px 0px 15px rgba(0,0,0,.5);
+}
+
+.float_left{
+    float: left;
+}
+
+.float_right{
+    float: right;
+}
+
+.clear{
+    clear: both;
 }
 
 

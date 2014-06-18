@@ -1,8 +1,8 @@
 <h2>
   Group Stage
 </h2>
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#tab_1" data-toggle="tab">1</a></li>
+<ul class="games_group_tab nav nav-tabs">
+  <li><a href="#tab_1" data-toggle="tab">1</a></li>
   <li><a href="#tab_2" data-toggle="tab">2</a></li>
   <li><a href="#tab_3" data-toggle="tab">3</a></li>
   <li><a href="#tab_4" data-toggle="tab">4</a></li>
@@ -12,7 +12,7 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane fade in active" id="tab_1">
+  <div class="tab-pane fade" id="tab_1">
     <%= render 'games', :games => @games[:round_0][0..7] %>
   </div>
   <div class="tab-pane fade" id="tab_2">

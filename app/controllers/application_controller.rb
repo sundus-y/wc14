@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def load_side_bar
     @total_points = {}
     User.all.each do |u|
-      @total_points[u.email] = Bracket.total_point(u)
+      @total_points[u.email] = {point: Bracket.total_point(u), goal: u.total_goals}
     end
   end
 end

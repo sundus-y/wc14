@@ -27,22 +27,24 @@
     <%= f.label :game_time %>
     <%= f.time_field :game_time %>
   </div>
-  <div class="field">
+  <div class="field float_left">
     <%= f.label :team_a %>
-    <%= f.select :team_a, options_for_select(get_team_list.sort, f.object.team_a)%>
+    <%= f.select :team_a, Game.bracket_team_picker.map(&:team_a)%>
   </div>
-  <div class="field">
-    <%= f.label :team_b %>
-    <%= f.select :team_b, options_for_select(get_team_list.sort, f.object.team_b) %>
-  </div>
-  <div class="field">
-    <%= f.label :goal_a %>
+  <div class="field float_right">
+    <%= f.label :goal_a%>
     <%= f.number_field :goal_a, min: 0 %>
   </div>
-  <div class="field">
-    <%= f.label :goal_b %>
+  <div class="clear"></div>
+  <div class="field float_left">
+    <%= f.label :team_b %>
+    <%= f.select :team_b, Game.bracket_team_picker.map(&:team_a)%>
+  </div>
+  <div class="field float_right">
+    <%= f.label :goal_b, class:'inline_label' %>
     <%= f.number_field :goal_b, min: 0 %>
   </div>
+  <div class="clear"></div>
   <div class="actions">
     <%= f.submit %>
   </div>

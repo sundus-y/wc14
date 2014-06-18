@@ -1,6 +1,6 @@
 <br>
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#group_stage" data-toggle="tab">Group Stage</a></li>
+<ul class="games_tab nav nav-tabs">
+  <li><a href="#group_stage" data-toggle="tab">Group Stage</a></li>
   <li><a href="#round_of_16" data-toggle="tab">Round of 16</a></li>
   <li><a href="#quarter_final" data-toggle="tab">Quarter Final</a></li>
   <li><a href="#semi_final" data-toggle="tab">Semi Final</a></li>
@@ -9,7 +9,7 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane fade in active " id="group_stage">
+  <div class="tab-pane fade" id="group_stage">
     <%= render 'group_stage' %>
   </div>
   <div class="tab-pane fade" id="round_of_16">
@@ -29,3 +29,10 @@
 <%= link_to 'New Game', new_game_path if current_user && current_user.email=='sundus-yousuf@uiowa.edu'%>
 
 <br>
+
+<%= javascript_tag do %>
+  select_tab = $('.future_game').first().parent().parent().closest('.tab-pane').attr('id');
+  $('.games_tab a[href="#'+select_tab+'"]').tab('show');
+  select_tab = $('.future_game').first().parent().attr('id');
+  $('.games_group_tab a[href="#'+select_tab+'"]').tab('show');
+<% end %>

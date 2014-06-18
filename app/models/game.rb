@@ -20,7 +20,9 @@ class Game < ActiveRecord::Base
   end
 
   def self.total_number_of_goals
-
+    goal_a = all.pluck(:goal_a)
+    goal_b = all.pluck(:goal_b)
+    goal_a.sum + goal_b.sum
   end
 
   def to_s
@@ -58,6 +60,8 @@ class Game < ActiveRecord::Base
       true
     elsif game_date > Date.today
       false
+    elsif game_time.hour < Time.now.hour
+      true
     end
   end
 end
