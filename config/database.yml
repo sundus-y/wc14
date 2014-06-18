@@ -42,7 +42,7 @@ test:
   password: mysql123
   host: localhost
 
-prodcution:
+production:
   <<: *default
   database: wc14
   username: <%= ENV["OPENSHIFT_MYSQL_DB_USERNAME"] %>
