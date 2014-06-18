@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login, only: [:index, :new, :create]
+  #skip_before_filter :require_login
+  before_action :admin?, except: [:edit]
+  before_action :for_current_user?, only: [:edit]
   # GET /users
   # GET /users.json
   def index
@@ -70,5 +72,17 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
+    end
+
+    def admin?
+      unless current_user.try(:admin?)
+        redirect_to games_path, alert: "You don't have persmission to do this."
+      end
+    end
+
+    def for_current_user?
+      unless current_user.try(:id) == params[:id].try(:to_i) && current_user.try(:admin?)
+        redirect_to games_path, alert: "You don't have persmission to do this."
+      end
     end
 end

@@ -26,7 +26,9 @@
   </div>
 </div>
 
-<%= link_to 'New Game', new_game_path if current_user && current_user.email=='sundus-yousuf@uiowa.edu'%>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Game', new_game_path %>
+<% end %>
 
 <br>
 

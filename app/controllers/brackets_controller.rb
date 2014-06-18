@@ -1,6 +1,6 @@
 class BracketsController < ApplicationController
+  before_action :admin?, except: [:index]
   before_action :set_bracket, only: [:show, :edit, :update, :destroy]
-
   # GET /brackets
   # GET /brackets.json
   def index
@@ -70,5 +70,11 @@ class BracketsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def bracket_params
       params.require(:bracket).permit(:user_id, :game_id, :team_a, :team_b, :round)
+    end
+
+    def admin?
+      unless current_user.try(:admin?)
+        redirect_to games_path, alert: "You don't have persmission to do this."
+      end
     end
 end

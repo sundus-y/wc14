@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login
+  skip_before_filter :require_login, only: [:index]
+  before_action :admin?, except: [:index]
   # GET /games
   # GET /games.json
   def index
@@ -75,5 +76,11 @@ class GamesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
       params.require(:game).permit(:round, :team_a, :team_b, :goal_a, :goal_b)
+    end
+
+    def admin?
+      unless current_user.try(:admin?)
+        redirect_to games_path, alert: "You don't have persmission to do this."
+      end
     end
 end

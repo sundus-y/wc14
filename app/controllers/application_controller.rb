@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
       @total_points[u.email] = {point: Bracket.total_point(u), goal: u.total_goals}
     end
   end
+
+  def admin?
+    unless current_user.try(:admin?)
+      redirect_to games_path, alert: "You don't have persmission to do this."
+    end
+  end
 end

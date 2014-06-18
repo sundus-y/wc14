@@ -6,6 +6,8 @@
     <div class="well_games goal_left span-1"><%= game.goal_a%></div>
     <div class="well_games goal_right span-1"><%= game.goal_b%></div>
     <div class="well_games team_right span-3 <%= 'winner_team' if game.winner == 'b' %>"><%= game.team_b %></div>
-    <div class="well_games"><%= link_to 'Edit', edit_game_path(game) if current_user && current_user.email=='sundus-yousuf@uiowa.edu'%></div>
+    <% if current_user.try(:admin?) %>
+      <div class="well_games"><%= link_to 'Edit', edit_game_path(game) %></div>
+    <% end %>
   </div>
 <% end %>

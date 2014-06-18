@@ -161,32 +161,35 @@
   </tr>
 </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Game</th>
-      <th>Team a</th>
-      <th>Team b</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if current_user.try(:admin?) %>
 
-  <tbody>
-    <% @brackets.each do |bracket| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= bracket.user_id %></td>
-        <td><%= bracket.game_id %></td>
-        <td><%= bracket.team_a %></td>
-        <td><%= bracket.team_b %></td>
-        <td><%= link_to 'Show', bracket %></td>
-        <td><%= link_to 'Edit', edit_bracket_path(bracket) %></td>
-        <td><%= link_to 'Destroy', bracket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User</th>
+        <th>Game</th>
+        <th>Team a</th>
+        <th>Team b</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<hr>
+    <tbody>
+      <% @brackets.each do |bracket| %>
+        <tr>
+          <td><%= bracket.user_id %></td>
+          <td><%= bracket.game_id %></td>
+          <td><%= bracket.team_a %></td>
+          <td><%= bracket.team_b %></td>
+          <td><%= link_to 'Show', bracket %></td>
+          <td><%= link_to 'Edit', edit_bracket_path(bracket) %></td>
+          <td><%= link_to 'Destroy', bracket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Bracket', new_bracket_path %>
+  <hr>
+
+  <%= link_to 'New Bracket', new_bracket_path %>
+<% end %>
