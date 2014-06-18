@@ -5,14 +5,6 @@
 #   gem 'sqlite3'
 #
 
-# OPEN SHIT INFO
-#  URL:        http://wc14-coderunner.rhcloud.com/
-#  SSH to:     539c2b875973ca323700093b@wc14-coderunner.rhcloud.com
-#  Git remote: ssh://539c2b875973ca323700093b@wc14-coderunner.rhcloud.com/~/git/wc14.git/
-#  Cloned to:  /Users/syousuf/code/p/openshit/wc14
-#  Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
-#  PHPMyADMIN: https://wc14-coderunner.rhcloud.com/phpmyadmin/
-
 #default: &default
 #  adapter: sqlite3
 #  pool: 5
@@ -55,4 +47,4 @@ prodcution:
   database: wc14
   username: <%= ENV["OPENSHIFT_MYSQL_DB_USERNAME"] %>
   password: <%= ENV["OPENSHIFT_MYSQL_DB_PASSWORD"] %>
-    host: <%= ENV["OPENSHIFT_MYSQL_DB_HOST"] %>
+  host: <%= ENV["OPENSHIFT_MYSQL_DB_HOST"] %>
