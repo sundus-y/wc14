@@ -34,7 +34,12 @@
 
 <%= javascript_tag do %>
   select_tab = $('.future_game').first().parent().parent().closest('.tab-pane').attr('id');
+  if (select_tab == undefined){
+    select_tab = 'tab_6'
+  }
+  $('.games_group_tab a[href="#'+select_tab+'"]').tab('show');
   $('.games_tab a[href="#'+select_tab+'"]').tab('show');
   select_tab = $('.future_game').first().parent().attr('id');
+  $('.games_tab a[href="#'+select_tab+'"]').tab('show');
   $('.games_group_tab a[href="#'+select_tab+'"]').tab('show');
 <% end %>
